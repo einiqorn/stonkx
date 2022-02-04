@@ -1,5 +1,3 @@
-import GithubPagesPrefix from './GithubWorkaround'
-
 export default function imageLoader({ src }) {
-  return `${GithubPagesPrefix()}${src}`
+  return `${src}`
 }
