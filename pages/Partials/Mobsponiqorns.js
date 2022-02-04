@@ -29,8 +29,8 @@ function Logo({ logo, width, height, altText }) {
 
 function Mobsponiqorns() {
   return (
-    <section>
-      <div className="px-4 mx-auto max-w-9xl sm:px-6">
+    <section className="flex justify-center">
+      <div className="px-4 sm:px-6">
         <div className="py-8 md:pt-12 md:pb-14">
           <div
             className="flex flex-wrap items-center justify-center -m-4 md:-m-8"

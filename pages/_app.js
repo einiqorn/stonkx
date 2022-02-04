@@ -21,7 +21,7 @@ function TopStonk({ Component }) {
     document.querySelector('html').style.scrollBehavior = 'smooth'
     window.scroll({ top: 0 })
     document.body.className =
-      'overflow-x-hidden antialiased tracking-tight bg-white font-inter text-slate-800'
+      'antialiased tracking-tight bg-white font-inter text-slate-800'
   }, [location.pathname])
 
   return <Component location={location} lang="en" />
