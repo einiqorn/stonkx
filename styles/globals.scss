@@ -6,4 +6,12 @@
 
 @tailwind base;
 @tailwind components;
+
+// Additional styles
+@import 'additional-styles/hamburger.scss';
+
 @tailwind utilities;
+
+// AOS styles
+$aos-distance: 10px;
+@import 'node_modules/aos/src/sass/aos.scss';
