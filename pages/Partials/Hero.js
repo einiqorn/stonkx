@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import GithubPagesPrefix from '../../components/utils/GithubWorkaround'
+import imageLoader from '../../components/utils/ImageLoader'
 
 import HeroImage from '../../public/static/images/dominique-einhorn.jpg'
 
@@ -68,6 +69,7 @@ function Hero({ lang = 'en' }) {
                   />
                   <div className="relative mx-auto md:max-w-none w-96 h-96">
                     <Image
+                      loader={imageLoader}
                       src={HeroImage}
                       alt="Dominique Einhorn"
                       layout="fill"
