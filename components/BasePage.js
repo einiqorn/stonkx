@@ -2,7 +2,8 @@ import Head from 'next/head'
 
 import Header from './Header'
 
-// TODO: Remove favicon link prod/dev check on switcaway from GH Pages domain
+import GithubPagesPrefix from './utils/GithubWorkaround'
+
 function BasePage({ children, location, headerMode, meta = {} }) {
   return (
     <div className="flex flex-col min-h-screen">
@@ -18,9 +19,7 @@ function BasePage({ children, location, headerMode, meta = {} }) {
         <link
           rel="icon"
           type="image/png"
-          href={`${
-            process.env.NODE_ENV === 'production' ? '/stonkx' : ''
-          }/favicon.png`}
+          href={`${GithubPagesPrefix()}/favicon.png`}
         />
       </Head>
       <Header location={location} headerMode={headerMode} />
