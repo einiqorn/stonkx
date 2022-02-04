@@ -24,7 +24,7 @@ function TopStonk({ Component }) {
       'overflow-x-hidden antialiased tracking-tight bg-white font-inter text-slate-800'
   }, [location.pathname])
 
-  return <Component location={location} lang="fr" />
+  return <Component location={location} lang="en" />
 }
 
 export default TopStonk
