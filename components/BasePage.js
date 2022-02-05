@@ -9,6 +9,7 @@ function BasePage({ children, location, headerMode, meta = {} }) {
     <div className="flex flex-col min-h-screen">
       <Head>
         <title>{meta.title || 'Top Stonk 2022'}</title>
+        <meta name="robots" content="noindex" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="description"
