@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import GithubPagesPrefix from '../../components/utils/GithubWorkaround'
 import imageLoader from '../../components/utils/ImageLoader'
 
 import HeroImage from '../../public/static/images/dominique-einhorn.jpg'
@@ -47,7 +46,7 @@ function Hero({ lang = 'en' }) {
               {/* CTA */}
               <div className="max-w-xs mx-auto space-y-4 sm:max-w-none sm:flex sm:justify-center md:justify-start sm:space-y-0 sm:space-x-4">
                 <div>
-                  <Link href={`${GithubPagesPrefix()}/`} passHref>
+                  <Link href="/" passHref>
                     <a className="w-full text-white bg-blue-600 btn hover:bg-blue-700 group">
                       {text.cta[lang]}{' '}
                       <span className="tracking-normal text-blue-300 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">

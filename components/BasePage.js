@@ -2,8 +2,6 @@ import Head from 'next/head'
 
 import Header from './Header'
 
-import GithubPagesPrefix from './utils/GithubWorkaround'
-
 function BasePage({ children, location, headerMode, meta = {} }) {
   return (
     <div className="flex flex-col min-h-screen">
@@ -16,11 +14,6 @@ function BasePage({ children, location, headerMode, meta = {} }) {
           content={
             meta.description || 'Best scammy pump and dump stonk of 2022.'
           }
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href={`${GithubPagesPrefix()}/favicon.png`}
         />
       </Head>
       <Header location={location} headerMode={headerMode} />
