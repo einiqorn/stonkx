@@ -1,8 +1,5 @@
 module.exports = {
   reactStrictMode: true,
-  images: {
-    loader: 'custom',
-  },
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
       Object.assign(config.resolve.alias, {

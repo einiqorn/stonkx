@@ -1,8 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import imageLoader from '../../components/utils/ImageLoader'
-
 import HeroImage from '../../public/static/images/dominique-einhorn.jpg'
 
 function Hero({ lang = 'en' }) {
@@ -68,7 +66,6 @@ function Hero({ lang = 'en' }) {
                   />
                   <div className="relative mx-auto h-80 w-80 md:max-w-none md:w-96 md:h-96">
                     <Image
-                      loader={imageLoader}
                       src={HeroImage}
                       alt="Dominique Einhorn"
                       layout="fill"

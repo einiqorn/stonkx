@@ -1,9 +1,7 @@
 import Image from 'next/image'
 
-import imageLoader from '../../components/utils/ImageLoader'
-
 import MobcastLogo from '../../public/static/images/mobsponiqorns/mobcast.png'
-import CXLogo from '../../public/static/images/mobsponiqorns/challengerx.png'
+import CXSportLogo from '../../public/static/images/mobsponiqorns/challengerx.png'
 import FormationLogo from '../../public/static/images/mobsponiqorns/formationgg.png'
 import UniqornLogo from '../../public/static/images/mobsponiqorns/uniqorn.png'
 import PowerclickLogo from '../../public/static/images/mobsponiqorns/powerclickcom.png'
@@ -16,13 +14,7 @@ function Logo({ logo, width, height, altText }) {
       data-aos-anchor="[data-aos-id-mobsponiscorns]"
       data-aos-delay="100"
     >
-      <Image
-        loader={imageLoader}
-        src={logo}
-        width={width}
-        height={height}
-        alt={altText}
-      />
+      <Image src={logo} width={width} height={height} alt={altText} />
     </div>
   )
 }
@@ -38,9 +30,9 @@ function Mobsponiqorns() {
           >
             <Logo
               logo={PowerclickLogo}
+              altText="Powerclick.com"
               width="200"
               height="31"
-              altText="Powerclick.com"
             />
             <Logo
               logo={UniqornLogo}
@@ -48,19 +40,23 @@ function Mobsponiqorns() {
               width="160"
               height="26"
             />
-            <Logo logo={CXLogo} width="250" height="40" alt="ChallengerX" />
+            <Logo
+              logo={CXSportLogo}
+              altText="ChallengerX"
+              width="250"
+              height="40"
+            />
             <Logo
               logo={MobcastLogo}
+              altText="Mobcast"
               width="165"
               height="18"
-              alt="Mobcast"
-              className="px-8"
             />
             <Logo
               logo={FormationLogo}
+              altText="Formation"
               width="135"
               height="30"
-              alt="Formation"
             />
           </div>
         </div>
