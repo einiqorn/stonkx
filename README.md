@@ -1,5 +1,6 @@
 # CXStonkx
 
-[![GH Pages Deploy](https://github.com/einiqorn/stonkx/actions/workflows/deploy.yaml/badge.svg)](https://github.com/einiqorn/stonkx/actions/workflows/deploy.yaml)
+[![Build](https://github.com/einiqorn/stonkx/actions/workflows/build.yaml/badge.svg)](https://github.com/einiqorn/stonkx/actions/workflows/build.yaml)
+[![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=stonkx)](https://stonkx.vercel.app/)
 
 Very nice, buy now.
