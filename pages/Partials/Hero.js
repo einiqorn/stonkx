@@ -31,21 +31,21 @@ function Hero() {
       <div className="relative max-w-6xl px-4 mx-auto sm:px-6">
         <div className="pt-32 pb-20 md:pt-40 md:pb-44">
           {/* Hero */}
-          <div className="max-w-xl mx-auto space-y-16 md:max-w-none md:flex md:items-center md:space-x-8 lg:space-x-16 xl:space-x-20 md:space-y-0">
+          <div className="max-w-xl mx-auto space-y-16 md:max-w-none lg:flex lg:justify-between lg:items-center lg:space-x-16 xl:space-x-20 lg:space-y-0">
             {/* Hero content */}
             <div
-              className="text-center md:text-left md:min-w-[30rem]"
+              className="text-center lg:text-left lg:min-w-[30rem]"
               data-aos="fade-right"
             >
               {/* Hero Text */}
-              <h1 className="mb-4 h1 font-playfair-display text-slate-100">
+              <h1 className="mx-auto mb-4 lg:max-w-lg h1 font-playfair-display text-slate-100">
                 {text.headline[locale]}
               </h1>
               <p className="mb-8 text-xl text-slate-400">
                 {text.subheading[locale]}
               </p>
               {/* CTA */}
-              <div className="max-w-xs mx-auto space-y-4 sm:max-w-none sm:flex sm:justify-center md:justify-start sm:space-y-0 sm:space-x-4">
+              <div className="max-w-xs mx-auto space-y-4 sm:max-w-none sm:flex sm:justify-center lg:justify-start sm:space-y-0 sm:space-x-4">
                 <div>
                   <Link href="/" passHref>
                     <a className="w-full text-white bg-blue-600 btn hover:bg-blue-700 group">
@@ -61,17 +61,18 @@ function Hero() {
             {/* Hero image */}
             <div data-aos="fade-left">
               {/* Image */}
-              <div className="flex items-center justify-center">
+              <div className="flex justify-center items-right">
                 <div className="relative">
                   <div
                     className="absolute inset-0 mt-3 ml-3 translate-x-4 translate-y-4 border-2 pointer-events-none border-slate-700 -z-10"
                     aria-hidden="true"
                   />
-                  <div className="relative mx-auto h-80 w-80 md:max-w-none md:w-96 md:h-96">
+                  <div className="relative mx-auto md:max-w-none">
                     <Image
                       src={HeroImage}
                       alt="Dominique Einhorn"
-                      layout="fill"
+                      width={500}
+                      height={500}
                       priority
                     />
                   </div>
