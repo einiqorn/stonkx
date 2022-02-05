@@ -1,23 +1,23 @@
 import Image from 'next/image'
 import Link from 'next/link'
-
-import GithubPagesPrefix from '../../components/utils/GithubWorkaround'
-import imageLoader from '../../components/utils/ImageLoader'
+import { useRouter } from 'next/router'
 
 import HeroImage from '../../public/static/images/dominique-einhorn.jpg'
 
-function Hero({ lang = 'en' }) {
+function Hero() {
+  const router = useRouter()
+  const { locale } = router
   const text = {
     headline: {
-      en: "I've scammed thousands of investors just like you.",
+      'en-US': "I've scammed thousands of investors just like you.",
       fr: "Tous les jour, j'arnaque des milliers d'investisseurs.",
     },
     subheading: {
-      en: "Today, I'm going to show you how.",
+      'en-US': "Today, I'm going to show you how.",
       fr: "Aujourd'hui, je vous montre comment faire.",
     },
     cta: {
-      en: 'Learn my secrets',
+      'en-US': 'Learn my secrets',
       fr: 'Apprenez mes secrets',
     },
   }
@@ -39,17 +39,17 @@ function Hero({ lang = 'en' }) {
             >
               {/* Hero Text */}
               <h1 className="mb-4 h1 font-playfair-display text-slate-100">
-                {text.headline[lang]}
+                {text.headline[locale]}
               </h1>
               <p className="mb-8 text-xl text-slate-400">
-                {text.subheading[lang]}
+                {text.subheading[locale]}
               </p>
               {/* CTA */}
               <div className="max-w-xs mx-auto space-y-4 sm:max-w-none sm:flex sm:justify-center md:justify-start sm:space-y-0 sm:space-x-4">
                 <div>
-                  <Link href={`${GithubPagesPrefix()}/`} passHref>
+                  <Link href="/" passHref>
                     <a className="w-full text-white bg-blue-600 btn hover:bg-blue-700 group">
-                      {text.cta[lang]}{' '}
+                      {text.cta[locale]}{' '}
                       <span className="tracking-normal text-blue-300 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
                         -&gt;
                       </span>
@@ -69,10 +69,10 @@ function Hero({ lang = 'en' }) {
                   />
                   <div className="relative mx-auto h-80 w-80 md:max-w-none md:w-96 md:h-96">
                     <Image
-                      loader={imageLoader}
                       src={HeroImage}
                       alt="Dominique Einhorn"
                       layout="fill"
+                      priority
                     />
                   </div>
                 </div>

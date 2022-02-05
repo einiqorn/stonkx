@@ -1,11 +1,5 @@
-const isProd = process.env.NODE_ENV === 'production'
-
 module.exports = {
   reactStrictMode: true,
-  assetPrefix: isProd ? '/stonkx/' : '',
-  images: {
-    loader: 'custom',
-  },
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
       Object.assign(config.resolve.alias, {
@@ -15,5 +9,9 @@ module.exports = {
       })
     }
     return config
+  },
+  i18n: {
+    locales: ['en-US', 'fr'],
+    defaultLocale: 'en-US',
   },
 }

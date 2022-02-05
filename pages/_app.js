@@ -24,7 +24,7 @@ function TopStonk({ Component }) {
       'antialiased tracking-tight bg-white font-inter text-slate-800'
   }, [location.pathname])
 
-  return <Component location={location} lang="en" />
+  return <Component location={location} />
 }
 
 export default TopStonk

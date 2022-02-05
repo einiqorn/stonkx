@@ -2,8 +2,6 @@ import React, { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Transition from './utils/Transition'
 
-import GithubPagesPrefix from './utils/GithubWorkaround'
-
 /* TODO:
   * Set location prop on links
   * Create link items component:
@@ -63,7 +61,7 @@ function Header({ location, headerMode }) {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <div className="pr-4">
-            <Link href={`${GithubPagesPrefix()}/`}>
+            <Link href="/">
               <a className="block pb-1 text-2xl transition duration-150 ease-in-out">
                 👍
               </a>
@@ -74,7 +72,7 @@ function Header({ location, headerMode }) {
           <nav className="hidden md:flex md:grow">
             <ul className="flex flex-wrap items-center justify-start grow">
               <li>
-                <Link href={`${GithubPagesPrefix()}/`}>
+                <Link href="/">
                   <a className="flex items-center px-3 py-2 font-medium transition duration-150 ease-in-out text-slate-800 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-600 lg:px-5">
                     Stuff
                   </a>
@@ -122,7 +120,7 @@ function Header({ location, headerMode }) {
               >
                 <ul className="px-5 py-2">
                   <li>
-                    <Link href={`${GithubPagesPrefix()}/`}>
+                    <Link href="/">
                       <a className="flex py-2 font-medium text-slate-800 hover:text-blue-600">
                         Stuff
                       </a>
