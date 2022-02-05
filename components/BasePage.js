@@ -4,7 +4,14 @@ import Header from './Header'
 
 import GithubPagesPrefix from './utils/GithubWorkaround'
 
-function BasePage({ children, location, headerMode, meta = {} }) {
+function BasePage({
+  children,
+  location,
+  headerMode,
+  lang,
+  setLang,
+  meta = {},
+}) {
   return (
     <div className="flex flex-col min-h-screen">
       <Head>
@@ -23,7 +30,12 @@ function BasePage({ children, location, headerMode, meta = {} }) {
           href={`${GithubPagesPrefix()}/favicon.png`}
         />
       </Head>
-      <Header location={location} headerMode={headerMode} />
+      <Header
+        location={location}
+        headerMode={headerMode}
+        lang={lang}
+        setLang={setLang}
+      />
       <main className="grow">{children}</main>
     </div>
   )

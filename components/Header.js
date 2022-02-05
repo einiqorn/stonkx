@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Transition from './utils/Transition'
 
+import LangSelection from './LangSelection'
+
 import GithubPagesPrefix from './utils/GithubWorkaround'
 
 /* TODO:
@@ -12,7 +14,7 @@ import GithubPagesPrefix from './utils/GithubWorkaround'
 */
 
 // eslint-disable-next-line no-unused-vars
-function Header({ location, headerMode }) {
+function Header({ location, headerMode, lang, setLang }) {
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
   const [top, setTop] = useState(true)
 
@@ -81,6 +83,7 @@ function Header({ location, headerMode }) {
                 </Link>
               </li>
             </ul>
+            <LangSelection lang={lang} setLang={setLang} />
           </nav>
 
           {/* Mobile menu */}
