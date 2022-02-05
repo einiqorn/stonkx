@@ -1,5 +1,8 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import Transition from './utils/Transition'
 
 /* TODO:
@@ -9,8 +12,52 @@ import Transition from './utils/Transition'
     - Map to a locations object in each menu.
 */
 
+function Dropdown({ children, title }) {
+  const [dropdownOpen, setDropdownOpen] = useState(false)
+
+  return (
+    <li
+      className="relative"
+      onMouseEnter={() => setDropdownOpen(true)}
+      onMouseLeave={() => setDropdownOpen(false)}
+      onFocus={() => setDropdownOpen(true)}
+      onBlur={() => setDropdownOpen(false)}
+    >
+      <a
+        className="flex items-center px-3 py-2 font-medium transition duration-150 ease-in-out text-slate-800 dark:text-slate-400 lg:px-5"
+        href="#0"
+        aria-expanded={dropdownOpen}
+        onClick={(e) => e.preventDefault()}
+      >
+        {title}
+        <svg
+          className="w-3 h-3 ml-1 cursor-pointer fill-current text-slate-400 dark:text-slate-500 shrink-0"
+          viewBox="0 0 12 12"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M10.28 4.305L5.989 8.598 1.695 4.305A1 1 0 00.28 5.72l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z" />
+        </svg>
+      </a>
+      <Transition
+        show={dropdownOpen}
+        tag="ul"
+        className="absolute right-0 w-40 py-2 ml-4 origin-top-right bg-white rounded shadow-lg top-full"
+        enter="transition ease-out duration-200 transform"
+        enterStart="opacity-0 -translate-y-2"
+        enterEnd="opacity-100 translate-y-0"
+        leave="transition ease-out duration-200"
+        leaveStart="opacity-100"
+        leaveEnd="opacity-0"
+      >
+        {children}
+      </Transition>
+    </li>
+  )
+}
+
 // eslint-disable-next-line no-unused-vars
 function Header({ location, headerMode }) {
+  const router = useRouter()
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
   const [top, setTop] = useState(true)
 
@@ -79,6 +126,28 @@ function Header({ location, headerMode }) {
                 </Link>
               </li>
             </ul>
+            <ul className="flex flex-wrap items-center justify-end grow">
+              <Dropdown title="Language">
+                <li>
+                  <Link
+                    href={router.pathname}
+                    locale="en-US"
+                    className="flex px-5 py-2 text-sm font-medium leading-tight text-gray-600 hover:text-gray-900"
+                  >
+                    <a className="flex px-5 py-2 text-sm font-medium leading-tight text-gray-600 hover:text-gray-900">
+                      English
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href={router.pathname} locale="fr">
+                    <a className="flex px-5 py-2 text-sm font-medium leading-tight text-gray-600 hover:text-gray-900">
+                      Français
+                    </a>
+                  </Link>
+                </li>
+              </Dropdown>
+            </ul>
           </nav>
 
           {/* Mobile menu */}
@@ -121,10 +190,40 @@ function Header({ location, headerMode }) {
                 <ul className="px-5 py-2">
                   <li>
                     <Link href="/">
-                      <a className="flex py-2 font-medium text-slate-800 hover:text-blue-600">
+                      <a
+                        className="flex py-2 text-sm font-medium text-slate-600 hover:text-blue-600"
+                        onClick={() => setMobileNavOpen(!mobileNavOpen)}
+                      >
                         Stuff
                       </a>
                     </Link>
+                  </li>
+                  <li className="py-2 my-2 border-t border-b border-gray-200">
+                    <span className="flex py-2 font-medium text-slate-800 hover:text-blue-600">
+                      Language
+                    </span>
+                    <ul className="pl-4">
+                      <li>
+                        <Link href={router.pathname} locale="en-US">
+                          <a
+                            className="flex py-2 text-sm font-medium text-slate-600 hover:text-blue-600"
+                            onClick={() => setMobileNavOpen(!mobileNavOpen)}
+                          >
+                            English
+                          </a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href={router.pathname} locale="fr">
+                          <a
+                            className="flex py-2 text-sm font-medium text-slate-600 hover:text-blue-600"
+                            onClick={() => setMobileNavOpen(!mobileNavOpen)}
+                          >
+                            Français
+                          </a>
+                        </Link>
+                      </li>
+                    </ul>
                   </li>
                 </ul>
               </Transition>
