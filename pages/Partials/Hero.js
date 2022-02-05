@@ -29,7 +29,7 @@ function Hero() {
         aria-hidden="true"
       />
       <div className="relative max-w-6xl px-4 mx-auto sm:px-6">
-        <div className="pt-32 pb-20 md:pt-40 md:pb-44">
+        <div className="pt-32 pb-20 md:pt-36 md:pb-40">
           {/* Hero */}
           <div className="max-w-xl mx-auto space-y-16 md:max-w-none lg:flex lg:justify-between lg:items-center lg:space-x-16 xl:space-x-20 lg:space-y-0">
             {/* Hero content */}
@@ -64,15 +64,15 @@ function Hero() {
               <div className="flex justify-center items-right">
                 <div className="relative">
                   <div
-                    className="absolute inset-0 mt-3 ml-3 translate-x-4 translate-y-4 border-2 pointer-events-none border-slate-700 -z-10"
+                    className="absolute inset-0 mt-2 ml-2 translate-x-4 translate-y-2 border-2 pointer-events-none border-slate-700 -z-10"
                     aria-hidden="true"
                   />
                   <div className="relative mx-auto md:max-w-none">
                     <Image
                       src={HeroImage}
                       alt="Dominique Einhorn"
-                      width={500}
-                      height={500}
+                      width={450}
+                      height={450}
                       priority
                     />
                   </div>
