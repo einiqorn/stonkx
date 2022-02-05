@@ -10,7 +10,7 @@ function Hero() {
   const text = {
     headline: {
       'en-US': "I've scammed thousands of investors just like you.",
-      fr: "Tous les jour, j'arnaque des milliers d'investisseurs.",
+      fr: "Tous les jours, j'arnaque des milliers d'investisseurs.",
     },
     subheading: {
       'en-US': "Today, I'm going to show you how.",
