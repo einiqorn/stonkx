@@ -67,7 +67,7 @@ function Hero({ lang = 'en' }) {
                     className="absolute inset-0 mt-3 ml-3 translate-x-4 translate-y-4 border-2 pointer-events-none border-slate-700 -z-10"
                     aria-hidden="true"
                   />
-                  <div className="relative mx-auto md:max-w-none w-96 h-96">
+                  <div className="relative mx-auto h-80 w-80 md:max-w-none md:w-96 md:h-96">
                     <Image
                       loader={imageLoader}
                       src={HeroImage}
