@@ -1,9 +1,11 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState, useRef, useEffect } from 'react'
+
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import Transition from './utils/Transition'
+
+import Transition from '../utils/Transition'
 
 /* TODO:
   * Set location prop on links
@@ -58,12 +60,19 @@ function Dropdown({ children, title }) {
 // eslint-disable-next-line no-unused-vars
 function Header({ location, headerMode }) {
   const router = useRouter()
+  const { locale } = router
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
   const [top, setTop] = useState(true)
 
   const trigger = useRef(null)
   const mobileNav = useRef(null)
 
+  const text = {
+    contact: {
+      en: 'Contact',
+      fr: 'Contact',
+    },
+  }
   // close the mobile menu on click outside
   useEffect(() => {
     const clickHandler = ({ target }) => {
@@ -119,9 +128,9 @@ function Header({ location, headerMode }) {
           <nav className="hidden md:flex md:grow">
             <ul className="flex flex-wrap items-center justify-start grow">
               <li>
-                <Link href="/">
+                <Link href="/contact">
                   <a className="flex items-center px-3 py-2 font-medium transition duration-150 ease-in-out text-slate-800 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-600 lg:px-5">
-                    Stuff
+                    {text.contact[locale]}
                   </a>
                 </Link>
               </li>
@@ -131,7 +140,7 @@ function Header({ location, headerMode }) {
                 <li>
                   <Link
                     href={router.pathname}
-                    locale="en-US"
+                    locale="en"
                     className="flex px-5 py-2 text-sm font-medium leading-tight text-gray-600 hover:text-gray-900"
                   >
                     <a className="flex px-5 py-2 text-sm font-medium leading-tight text-gray-600 hover:text-gray-900">
@@ -188,15 +197,22 @@ function Header({ location, headerMode }) {
                 leaveEnd="opacity-0"
               >
                 <ul className="px-5 py-2">
-                  <li>
-                    <Link href="/">
-                      <a
-                        className="flex py-2 text-sm font-medium text-slate-600 hover:text-blue-600"
-                        onClick={() => setMobileNavOpen(!mobileNavOpen)}
-                      >
-                        Stuff
-                      </a>
-                    </Link>
+                  <li className="py-2 my-2 border-gray-200">
+                    <span className="flex py-2 font-medium text-slate-800 hover:text-blue-600">
+                      Pages
+                    </span>
+                    <ul className="pl-4">
+                      <li>
+                        <Link href="/contact">
+                          <a
+                            className="flex py-2 text-sm font-medium text-slate-600 hover:text-blue-600"
+                            onClick={() => setMobileNavOpen(!mobileNavOpen)}
+                          >
+                            {text.contact[locale]}
+                          </a>
+                        </Link>
+                      </li>
+                    </ul>
                   </li>
                   <li className="py-2 my-2 border-t border-b border-gray-200">
                     <span className="flex py-2 font-medium text-slate-800 hover:text-blue-600">
@@ -204,7 +220,7 @@ function Header({ location, headerMode }) {
                     </span>
                     <ul className="pl-4">
                       <li>
-                        <Link href={router.pathname} locale="en-US">
+                        <Link href={router.pathname} locale="en">
                           <a
                             className="flex py-2 text-sm font-medium text-slate-600 hover:text-blue-600"
                             onClick={() => setMobileNavOpen(!mobileNavOpen)}
