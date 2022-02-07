@@ -9,15 +9,15 @@ function Hero() {
   const { locale } = router
   const text = {
     headline: {
-      'en-US': "I've scammed thousands of investors just like you.",
+      en: "I've scammed thousands of investors just like you.",
       fr: "Tous les jours, j'arnaque des milliers d'investisseurs.",
     },
     subheading: {
-      'en-US': "Today, I'm going to show you how.",
+      en: "Today, I'm going to show you how.",
       fr: "Aujourd'hui, je vous montre comment faire.",
     },
     cta: {
-      'en-US': 'Learn my secrets',
+      en: 'Learn my secrets',
       fr: 'Apprenez mes secrets',
     },
   }
