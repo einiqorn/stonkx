@@ -1,6 +1,6 @@
-import BasePage from '../components/BasePage'
-import Hero from './Partials/Hero'
-import Mobsponiqorns from './Partials/Mobsponiqorns'
+import BasePage from '../partials/BasePage'
+import Hero from '../partials/Hero'
+import Mobsponiqorns from '../partials/Mobsponiqorns'
 
 export default function Home({ location }) {
   return (

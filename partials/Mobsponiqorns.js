@@ -1,10 +1,10 @@
 import Image from 'next/image'
 
-import MobcastLogo from '../../public/static/images/mobsponiqorns/mobcast.png'
-import CXSportLogo from '../../public/static/images/mobsponiqorns/challengerx.png'
-import FormationLogo from '../../public/static/images/mobsponiqorns/formationgg.png'
-import UniqornLogo from '../../public/static/images/mobsponiqorns/uniqorn.png'
-import PowerclickLogo from '../../public/static/images/mobsponiqorns/powerclickcom.png'
+import MobcastLogo from '../public/static/images/mobsponiqorns/mobcast.png'
+import CXSportLogo from '../public/static/images/mobsponiqorns/challengerx.png'
+import FormationLogo from '../public/static/images/mobsponiqorns/formationgg.png'
+import UniqornLogo from '../public/static/images/mobsponiqorns/uniqorn.png'
+import PowerclickLogo from '../public/static/images/mobsponiqorns/powerclickcom.png'
 
 function Logo({ logo, width, height, altText }) {
   return (

@@ -1,10 +1,10 @@
 import dynamic from 'next/dynamic'
 
-import BasePage from '../components/BasePage'
-import ContactHero from './Partials/ContactHero'
-import Mobsponiqorns from './Partials/Mobsponiqorns'
+import BasePage from '../partials/BasePage'
+import ContactHero from '../partials/ContactHero'
+import Mobsponiqorns from '../partials/Mobsponiqorns'
 
-const ContactForm = dynamic(() => import('./Partials/ContactForm'))
+const ContactForm = dynamic(() => import('../partials/ContactForm'))
 
 export default function Home({ location }) {
   return (

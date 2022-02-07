@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import HeroImage from '../../public/static/images/dominique-einhorn.jpg'
+import HeroImage from '../public/static/images/dominique-einhorn.jpg'
 
 function Hero() {
   const router = useRouter()

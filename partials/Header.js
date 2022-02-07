@@ -1,9 +1,11 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState, useRef, useEffect } from 'react'
+
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import Transition from './utils/Transition'
+
+import Transition from '../utils/Transition'
 
 /* TODO:
   * Set location prop on links

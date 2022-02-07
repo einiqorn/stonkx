@@ -2,7 +2,7 @@ import {
   messageLengthOkay,
   nameLengthOkay,
   validateEmail,
-} from '../utils/FormValidations'
+} from '../../utils/FormValidations'
 
 const { verify } = require('hcaptcha')
 const nodemailer = require('nodemailer')
