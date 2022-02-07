@@ -47,7 +47,7 @@ async function handlePostRequest(req, res) {
   const data = req.body
   if (validateData(data)) {
     if (await hcaptchaValid(data)) {
-      sendEmail(data)
+      await sendEmail(data)
       res.status(200).send({ success: true, message: 'Message sent.' })
     } else {
       res.status(400).send({
