@@ -192,7 +192,7 @@ export default function ContactForm() {
   }, [validCaptcha, data.email, data.name, data.message])
 
   return (
-    <div className="w-full h-screen p-6">
+    <section className="w-full p-6">
       <form
         className="flex flex-col items-center justify-between w-full max-w-3xl mx-auto"
         onSubmit={handleSubmit}
@@ -306,6 +306,6 @@ export default function ContactForm() {
           )}
         </button>
       </form>
-    </div>
+    </section>
   )
 }
