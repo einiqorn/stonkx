@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import HeroImage from '../public/static/images/dominique-einhorn.jpg'
+import HeroImage from '../public/static/images/49e7f7cc-f27e-475d-8825-c40d0fe22ebb.jpg'
 
 function Hero() {
   const router = useRouter()
@@ -71,7 +71,7 @@ function Hero() {
                     <Image
                       src={HeroImage}
                       alt="Dominique Einhorn"
-                      width={450}
+                      width={327}
                       height={450}
                       priority
                     />

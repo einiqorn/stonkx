@@ -10,7 +10,7 @@ export default function ContactHero() {
     },
     heroSubHeading: {
       en: 'Fill in the form below and speak your mind.',
-      fr: 'Utilisez ce formulaire pour dire ce que vous pensez.',
+      fr: 'Utilisez ce formulaire pour nous dire ce que vous pensez.',
     },
   }
   return (
